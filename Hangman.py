@@ -1,4 +1,9 @@
-word = "test" 
+import requests
+
+response = requests.get('https://random-word-api.vercel.app/api?words=1')
+data = response.json()
+
+word = data[0]
 lives = 8 
 currentcorrect=["_" for letter in word]
 print(currentcorrect)
